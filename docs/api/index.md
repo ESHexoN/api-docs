@@ -1,104 +1,196 @@
-# API 接口示例
+## 前言
 
-> 多平台情况下，WeatherAllInOne 仅返回同一格式的数据，方便调用。
+ESHexoN 后端 API 基本存在于 `/api/` 路径下，分为鉴权 API 和非鉴权 API。鉴权 API 需要**携带 Token 使用**。
 
-> 对于部分平台无法获取的数据，WeatherAllInOne 将会返回空白值。
+## 用户注册 (`/api/reg`)
 
-## 今日天气 (`/api/today`)
+- 请求地址：`/api/reg`;
+- 请求方法：`POST`;
+- 请求内容：
 
-> 返回今日天气（当前天气）。
-
-调用方法: GET,
-请求数据: 
-- `city`: 中文城市名、城市代码（`CN101010100`）、英文城市名
-- `format`: 携带数据格式(`name`, `name_en` 或 `code`)
-
-
-```json
+```JSON
 {
-    "code": 200, // 状态码
-    "data": {
-        "weather": "小雨", // 当前天气情况
-        "temp": {
-            "now": "19", // 现在温度
-            "day": "22", // 日间温度（最高温度）
-            "night": "16" // 夜间温度（最低温度）
-        },
-        "wind": [
-            "西南风", // 风向
-            "1级" // 风力
-        ],
-        "aq": [
-            "16", // 空气指数
-            "优" // 空气值
-        ],
-        "humidity": "100%", // 相对湿度
-        "sun": {
-            "sunrise": "06:35", // 日出
-            "sunset": "17:46" // 日落
-        }
-    }
+  "username": "<YOUR USERNAME>",
+  "password": "<PASSWORD IN MD5>"
+}
+```
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "注册成功。"
 }
 ```
 
+- 注意事项：用户名必须为 3-15 位数字字母，**目前仅接受一位用户注册**。
 
-## 7 日天气 (`/api/7d`)
 
-> 返回 7 日天气。
+## 用户登录 (`/api/login`)
 
-调用方法: GET,
-请求数据: 
-- `city`: 中文城市名、城市代码（`CN101010100`）、英文城市名
-- `format`: 携带数据格式(`name`, `name_en` 或 `code`)
+- 请求地址：`/api/login`;
+- 请求方法：`POST`;
+- 请求内容：
 
-```json
+```JSON
 {
-    "code": 200,
-    "data": [
-        {
-            "date": "2022-11-09", // 数据日期
-            "weather": "多云", // 天气
-            "temp": {
-                "now": "27", // 目前温度（部分不支持）
-                "day": "27", // 最高温度
-                "night": "18" // 最低温度
-            },
-            "wind": [
-                "西南风", // 风向
-                "2级" // 风速
-            ],
-            "aq": [
-                "27", // 空气指数
-                "优" // 空气值
-            ],
-            "humidity": "71%", // 湿度
-            "sun": {
-                "sunrise": "06:37", // 日出
-                "sunset": "17:45" // 日落
-            }
-        },
-        // ...
-    ]
-},
+  "username": "<YOUR USERNAME>",
+  "password": "<PASSWORD IN MD5>"
+}
+```
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "<YOUR TOKEN>"
+}
 ```
 
-## 城市数据 (`/api/geo`)
+## 检测 Token 有效性 (`/api/check_token`)
 
-> 返回对应城市数据（中文名、城市代码、英文拼音）
+- 请求地址：`/api/check_token`;
+- 请求方法：`POST`;
+- 请求内容：
 
-调用方法: GET,
-请求数据: 
-- `city`: 中文城市名、城市代码（`CN101010100`）、英文城市名
-- `format`: 携带数据格式(`name`, `name_en` 或 `code`)
-
-
-```json
+```JSON
 {
-    "code": 200,
-    "data": {
-        "name": "广州",
-        "code": "CN101280101",
-        "name_en": "guangzhou"
-    }
+  "token": "<YOUR TOKEN>"
+}
+```
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "Token 有效。"
+}
+```
+
+## 文章列表 (`/api/get_posts_list`)
+
+- 请求地址：`/api/get_posts_list`;
+- 请求方法：`POST`;
+- 请求内容：
+
+```JSON
+{
+  "token": "<YOUR TOKEN>"
+}
+```
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "{\"/\":[]}"
+}
+```
+
+## 草稿列表 (`/api/get_drafts_list`)
+
+- 请求地址：`/api/get_drafts_list`;
+- 请求方法：`POST`;
+- 请求内容：
+
+```JSON
+{
+  "token": "<YOUR TOKEN>"
+}
+```
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "{\"/\":[]}"
+}
+```
+
+## 上传文章 (`/api/add_posts`)
+
+- 请求地址：`/api/add_posts`;
+- 请求方法：`POST`;
+- 请求内容：
+```JSON
+{
+  "token": "<YOUR TOKEN>",
+  "filename": "<FILENAME>",
+  "content": "<CONTENT>",
+  "b64": "<CONTENT IS B64>"
+}
+```
+
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "上传成功。"
+}
+```
+
+## 上传草稿 (`/api/add_drafts`)
+
+- 请求地址：`/api/add_drafts`;
+- 请求方法：`POST`;
+- 请求内容：
+```JSON
+{
+  "token": "<YOUR TOKEN>",
+  "filename": "<FILENAME>",
+  "content": "<CONTENT>",
+  "b64": "<CONTENT IS B64>"
+}
+```
+
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "上传成功。"
+}
+```
+
+## 删除文章 (`/api/delete_posts`)
+
+- 请求地址：`/api/delete_posts`;
+- 请求方法：`POST`;
+- 请求内容：
+```JSON
+{
+  "token": "<YOUR TOKEN>",
+  "filename": "<FILENAME>"
+}
+```
+
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "删除成功。"
+}
+```
+
+## 删除草稿 (`/api/delete_drafts`)
+
+- 请求地址：`/api/delete_drafts`;
+- 请求方法：`POST`;
+- 请求内容：
+```JSON
+{
+  "token": "<YOUR TOKEN>",
+  "filename": "<FILENAME>"
+}
+```
+
+- 返回示例：
+
+```JSON
+{
+  "statusCode": 200,
+  "statusInfo": "删除成功。"
 }
 ```
