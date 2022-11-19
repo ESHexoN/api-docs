@@ -69,7 +69,7 @@ Deno 可以在全球的边缘节点运行 JavaScript 函数。
 
 点击 `Link` 连接。
 
-![](ttps://m.360buyimg.com/babel/jfs/t1/146383/13/31135/112882/63789709E0ad86522/851b8dc71379d41d.png)
+![](https://m.360buyimg.com/babel/jfs/t1/146383/13/31135/112882/63789709E0ad86522/851b8dc71379d41d.png)
 
 ## 完成
 
