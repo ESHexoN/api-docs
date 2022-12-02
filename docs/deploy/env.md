@@ -24,7 +24,7 @@ title: 生成环境变量
 
 2. 点击 `Developer Settings`.
 
-![image.png](https://pic9.58cdn.com.cn/nowater/webim/big/n_v2886fdcdfdcbc471ba3072b341e0a5a65.png)
+![image](https://user-images.githubusercontent.com/71591824/205311166-af1633d6-69b3-48ee-92a5-c205d9c827ba.png)
 
 3. 如图，点击 `Generate new token(classic)`.
 
@@ -32,11 +32,11 @@ title: 生成环境变量
 
 4. 如图，选择 Token 过期日期并必须勾选 `repo` 权限，点击 `Generate new token`.
 
-![image.png](https://pic9.58cdn.com.cn/nowater/webim/big/n_v2ad59de96e2ff4161a21279695eab1eba.png)
+![image](https://user-images.githubusercontent.com/71591824/205311081-e64e217a-3d35-412d-bf60-a773392c6571.png)
 
 5. 如图，此时 Token 已经生成完成。保存好 Token，这只会出现一次。
 
-![image.png](https://pic9.58cdn.com.cn/nowater/webim/big/n_v2e5b15cca040c42b1a214af7c47d992d8.png)
+![image](https://user-images.githubusercontent.com/71591824/205310930-ac96f751-f94d-4ace-8540-f0644206bd5a.png)
 
 ### 新建 GitHub 配置文件仓库
 
