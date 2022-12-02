@@ -17,6 +17,8 @@ title: 生成环境变量
 
 您无需手动填写，现在您可以使用 [ESHexoN Env Generator](https://awa.fyi/eshexon/env.html) 进行生成。
 
+> **本工具不收集您的任何信息！**
+
 ### 获取 GitHub Token
 
 1. 进入 [GitHub](https://github.com/) 主页。点击 `Settings`.
