@@ -58,12 +58,7 @@ Deno 可以在全球的边缘节点运行 JavaScript 函数。
 
 所有环境变量都是必填项。
 
-| 变量名 | 变量值 |
-| :-: | :-: |
-| `GITHUB_TOKEN` | GitHub Token, 必须有 repo 权限 |
-| `GITHUB_MAIN_REPO` | Hexo 仓库, 格式为 `[user]/[repo], [branch]` |
-| `GITHUB_SUB_REPO` | 配置文件仓库，格式为 `[user]/[repo], [branch]`|
-| `GITHUB_CONFIG_NAME` | 配置文件名称 |
+[有关环境变量的详细信息，请参见「生成环境变量」。](/deploy/env.html)
 
 ![](https://m.360buyimg.com/babel/jfs/t1/114242/32/29768/38717/6378961dEabedafd5/34af1f584c200748.png)
 
