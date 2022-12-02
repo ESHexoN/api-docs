@@ -20,7 +20,9 @@ title: 生成环境变量
 ### 获取 GitHub Token
 
 1. 进入 [GitHub](https://github.com/) 主页。点击 `Settings`.
-![image.png](https://pic2.58cdn.com.cn/nowater/webim/big/n_v20b08d298841c4220b5558bd2673449f7.png)
+
+
+![image](https://user-images.githubusercontent.com/71591824/205311452-0a304a70-fa7f-44ad-8baf-59a47a63a7e8.png)
 
 2. 点击 `Developer Settings`.
 
@@ -28,7 +30,8 @@ title: 生成环境变量
 
 3. 如图，点击 `Generate new token(classic)`.
 
-![image.png](https://pic2.58cdn.com.cn/nowater/webim/big/n_v2045eda886051454bb12aba60b5fa883e.png)
+
+![image](https://user-images.githubusercontent.com/71591824/205311505-f71c5e10-4539-4e7e-93be-b48b4ce6cdac.png)
 
 4. 如图，选择 Token 过期日期并必须勾选 `repo` 权限，点击 `Generate new token`.
 
