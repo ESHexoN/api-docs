@@ -7,11 +7,12 @@ export default {
             text: '开始',
             items: [
             { text: '开始使用', link: '/start.html' },
+                { text: '环境变量', link: '/deploy/env.html' },
             ]},
             {
                 text: 'API',
                 items: [
-                { text: '接口示例', link: '/api/' },
+                { text: 'API', link: '/api/' },
                 ]},
         ],
         footer: {
