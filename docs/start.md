@@ -27,7 +27,7 @@ title: 开始
 从更新情况上看，Deno 平台支持性会更好。
 
 - [使用 Deno 部署](/deploy/deno.html)
-- 使用 Cloudflare Workers 部署
+- [使用 Cloudflare Workers 部署](/deploy/cloudflare.html)
 
 
 ## 部署前端
