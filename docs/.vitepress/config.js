@@ -15,6 +15,10 @@ export default {
                 { text: 'API', link: '/api/' },
                 ]},
         ],
+        editLink: {
+          pattern: 'https://github.com/ESHexoN/api-docs/edit/master/docs/:path',
+          text: "在 GitHub 上编辑此页"
+        },
         footer: {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2022 CKY'
